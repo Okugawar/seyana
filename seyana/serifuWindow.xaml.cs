@@ -19,14 +19,25 @@ namespace seyana
     /// </summary>
     public partial class SerifuWindow : Window
     {
+        MainWindow mw;
         public SerifuWindow()
         {
             InitializeComponent();
+        }
+        public SerifuWindow(MainWindow mw): this()
+        {
+            this.mw = mw;
         }
 
         public void say(string message)
         {
             Dispatcher.Invoke(() => this.serifu.Text = message);
+        }
+
+        protected override void OnMouseLeftButtonDown(MouseButtonEventArgs e)
+        {
+            base.OnMouseLeftButtonDown(e);
+            Hide();
         }
     }
 }

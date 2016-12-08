@@ -20,23 +20,66 @@ namespace seyana
     /// </summary>
     public partial class MainWindow : Window
     {
-
+        SerifuWindow sw;
+        private int x, y;
         public MainWindow()
         {
             InitializeComponent();
 
-            serifuWindow = new SerifuWindow();
+            sw = new SerifuWindow();
+            x = 600;
+            y = 500;
+            setPosition();
         }
 
-        private void Quit_Clicked(object sender, RoutedEventArgs args)
+        private void setPosition()
         {
-            Close();
+            Canvas.SetLeft(this, x);
+            Canvas.SetTop(this, y);
+        }
+
+        /// <summary>
+        /// speak something
+        /// </summary>
+        /// <param name="message">something to say</param>
+        private void say(string message)
+        {
+            sw.say(message);
+            Canvas.SetLeft(sw, x + 100);
+            Canvas.SetTop(sw, y - 60);
+            sw.Show();
+        }
+
+        /// <summary>
+        /// action something(to test)
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="args"></param>
+        private void Action_Clicked(object sender, RoutedEventArgs args)
+        {
+            say("ｾﾔﾅｰ");
         }
 
         protected override void OnMouseLeftButtonDown(MouseButtonEventArgs e)
         {
             base.OnMouseLeftButtonDown(e);
-            DragMove();
+            say("ｾﾔﾅｰ");
+        }
+
+        /// <summary>
+        /// menu: Quit
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="args"></param>
+        private void Quit_Clicked(object sender, RoutedEventArgs args)
+        {
+            Close();
+        }
+
+        protected override void OnClosed(EventArgs e)
+        {
+            base.OnClosed(e);
+            sw.Close();
         }
     }
 }

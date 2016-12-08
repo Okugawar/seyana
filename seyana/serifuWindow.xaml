@@ -5,10 +5,19 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:seyana"
         mc:Ignorable="d"
-        Title="serifuWindow" Height="300" Width="300">
+        Title="serifuWindow" Height="154" Width="292"
+        AllowsTransparency="True"
+        Background="Transparent"
+        WindowStyle="None"
+        ResizeMode="NoResize">
     <Grid>
+        <Image Source="fukidashi.png"/>
         <TextBlock x:Name="serifu"
+                   Text=""
                    HorizontalAlignment="Left"
-                   VerticalAlignment="Top"/>
+                   VerticalAlignment="Top"
+                   Margin="30,12,0,0"
+                   FontSize="24"
+                   />
     </Grid>
 </Window>

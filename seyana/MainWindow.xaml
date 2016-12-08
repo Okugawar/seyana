@@ -13,6 +13,7 @@
 
     <Window.ContextMenu>
         <ContextMenu>
+            <MenuItem Header="action" Click="Action_Clicked"/>
             <MenuItem Header="quit" Click="Quit_Clicked"/>
         </ContextMenu>
     </Window.ContextMenu>
