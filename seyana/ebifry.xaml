@@ -1,27 +1,16 @@
-﻿<Window x:Class="seyana.MainWindow"
+﻿<Window x:Class="seyana.ebifry"
         xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:seyana"
         mc:Ignorable="d"
-        Title="MainWindow" Height="300" Width="300"
+        Title="ebifry" Height="100" Width="100"
         AllowsTransparency="True"
         Background="Transparent"
         WindowStyle="None"
         ResizeMode="NoResize">
-
-    <Window.ContextMenu>
-        <ContextMenu>
-            <MenuItem Header="summon" Click="Action_Clicked"/>
-            <MenuItem Header="quit" Click="Quit_Clicked"/>
-        </ContextMenu>
-    </Window.ContextMenu>
-    
     <Grid>
-        <!--
-        <TextBlock HorizontalAlignment="Center" VerticalAlignment="Center" Text="Hello World!"/>
-        -->
-        <Image Source="seyana.png" Margin="-180, -100"/>
+        <Image Source="ebifry.png"/>
     </Grid>
 </Window>

@@ -14,3 +14,5 @@ c:\users\ryo-okugawa\documents\visual studio 2015\Projects\seyana\seyana\obj\Deb
 c:\users\ryo-okugawa\documents\visual studio 2015\Projects\seyana\seyana\obj\Debug\seyana.pdb
 c:\users\ryo-okugawa\documents\visual studio 2015\Projects\seyana\seyana\obj\Debug\SerifuWindow.g.cs
 c:\users\ryo-okugawa\documents\visual studio 2015\Projects\seyana\seyana\obj\Debug\SerifuWindow.baml
+c:\users\ryo-okugawa\documents\visual studio 2015\Projects\seyana\seyana\obj\Debug\ebifry.g.cs
+c:\users\ryo-okugawa\documents\visual studio 2015\Projects\seyana\seyana\obj\Debug\ebifry.baml

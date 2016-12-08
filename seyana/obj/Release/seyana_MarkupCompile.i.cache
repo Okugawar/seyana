@@ -4,17 +4,17 @@
 winexe
 C#
 .cs
-c:\users\ryo-okugawa\documents\visual studio 2015\Projects\seyana\seyana\obj\Debug\
+c:\users\ryo-okugawa\documents\visual studio 2015\Projects\seyana\seyana\obj\Release\
 seyana
 none
 false
-DEBUG;TRACE
+TRACE
 c:\users\ryo-okugawa\documents\visual studio 2015\Projects\seyana\seyana\App.xaml
 3858845021
 
-8290313115
+121882294592
 15767094614
 ebifry.xaml;MainWindow.xaml;SerifuWindow.xaml;
 
-False
+True
 

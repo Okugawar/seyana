@@ -37,6 +37,8 @@
   <ItemGroup>
     <Reference Include="System" />
     <Reference Include="System.Data" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Windows.Forms" />
     <Reference Include="System.Xml" />
     <Reference Include="Microsoft.CSharp" />
     <Reference Include="System.Core" />
@@ -55,9 +57,17 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Compile Include="ebifry.xaml.cs">
+      <DependentUpon>ebifry.xaml</DependentUpon>
+    </Compile>
     <Compile Include="SerifuWindow.xaml.cs">
       <DependentUpon>SerifuWindow.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Util.cs" />
+    <Page Include="ebifry.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="MainWindow.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
@@ -107,6 +117,9 @@
   </ItemGroup>
   <ItemGroup>
     <Resource Include="fukidashi.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="ebifry.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
