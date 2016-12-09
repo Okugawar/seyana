@@ -23,6 +23,8 @@ namespace seyana
         public int h { get; private set; }
         public int x, y;
 
+        public int eatenPoint;
+
         public bool live;
 
         public Util.rect toRect() { return new Util.rect(x, y, w, h); }
@@ -31,16 +33,32 @@ namespace seyana
         public ebifry()
         {
             InitializeComponent();
-            w = (int)Width;
-            h = (int)Height;
+
+            Show();
+            var p0 = PointToScreen(new Point(0, 0));
+            var p1 = PointToScreen(new Point(Width, Height));
+            w = (int)(p1.X - p0.X);
+            h = (int)(p1.Y - p0.Y);
+            Hide();
 
             live = false;
         }
 
+        public void spawn(int ep)
+        {
+            live = true;
+            eatenPoint = ep;
+            //            Dispatcher.Invoke(() => Show());
+            Show();
+        }
+
         public void eaten()
         {
-            live = false;
-            Hide();
+            if (eatenPoint > 0) eatenPoint--;
+            else {
+                live = false;
+                Dispatcher.Invoke(() => Hide());
+            }
         }
 
         protected override void OnMouseLeftButtonDown(MouseButtonEventArgs e)
@@ -52,9 +70,9 @@ namespace seyana
         protected override void OnMouseLeftButtonUp(MouseButtonEventArgs e)
         {
             base.OnMouseLeftButtonUp(e);
-            var pt = PointFromScreen(new Point(0, 0));
-            x = -(int)pt.X;
-            y = -(int)pt.Y;
+            var pt = PointToScreen(new Point(0, 0));
+            x = (int)Math.Abs(pt.X);
+            y = (int)Math.Abs(pt.Y);
         }
     }
 }

@@ -35,9 +35,15 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="HtmlAgilityPack, Version=1.4.6.0, Culture=neutral, PublicKeyToken=bd319b19eaf3b43a, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>.\HtmlAgilityPack.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Data" />
     <Reference Include="System.Drawing" />
+    <Reference Include="System.Net" />
+    <Reference Include="System.Web" />
     <Reference Include="System.Windows.Forms" />
     <Reference Include="System.Xml" />
     <Reference Include="Microsoft.CSharp" />
@@ -60,9 +66,14 @@
     <Compile Include="ebifry.xaml.cs">
       <DependentUpon>ebifry.xaml</DependentUpon>
     </Compile>
+    <Compile Include="ExAttr.cs" />
+    <Compile Include="ExDocument.cs" />
+    <Compile Include="ExElement.cs" />
+    <Compile Include="HttpSender.cs" />
     <Compile Include="SerifuWindow.xaml.cs">
       <DependentUpon>SerifuWindow.xaml</DependentUpon>
     </Compile>
+    <Compile Include="SeyanaBrain.cs" />
     <Compile Include="Util.cs" />
     <Page Include="ebifry.xaml">
       <SubType>Designer</SubType>
@@ -120,6 +131,13 @@
   </ItemGroup>
   <ItemGroup>
     <Resource Include="ebifry.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="HtmlAgilityPack.dll" />
+    <Content Include="seyana_ebifry.wav" />
+    <Content Include="seyana_seyana.wav" />
+    <Content Include="seyana_utina.wav" />
+    <Content Include="seyana_yade.wav" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

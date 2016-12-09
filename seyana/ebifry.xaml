@@ -9,7 +9,8 @@
         AllowsTransparency="True"
         Background="Transparent"
         WindowStyle="None"
-        ResizeMode="NoResize">
+        ResizeMode="NoResize"
+        ShowInTaskbar="False">
     <Grid>
         <Image Source="ebifry.png"/>
     </Grid>

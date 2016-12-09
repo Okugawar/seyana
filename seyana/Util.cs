@@ -2,12 +2,60 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using System.Threading;
 using System.Threading.Tasks;
 
 namespace seyana
 {
     public static class Util
     {
+        public class TaskManage
+        {
+            private Task t;
+            private CancellationTokenSource cts;
+            private Action act;
+
+            public TaskManage(Action act)
+            {
+                this.act = act;
+                cts = new CancellationTokenSource();
+            }
+
+            public void start()
+            {
+                cancel();
+
+                t = Task.Factory.StartNew(act, cts.Token);
+            }
+
+            public void cancel()
+            {
+                if (t == null || t.IsCompleted) return;
+
+                try
+                {
+                    cts.Cancel();
+                    t.Wait();
+                }
+                catch (TaskCanceledException) { }
+            }
+
+            public bool isCompleted()
+            {
+                return t == null || t.IsCompleted;
+            }
+
+            public bool cancellationRequest()
+            {
+                return cts.IsCancellationRequested;
+            }
+
+            public CancellationToken getToken()
+            {
+                return cts.Token;
+            }
+        }
+
         public static int screenwidth = System.Windows.Forms.Screen.PrimaryScreen.WorkingArea.Width;
         public static int screenheight= System.Windows.Forms.Screen.PrimaryScreen.WorkingArea.Height;
 

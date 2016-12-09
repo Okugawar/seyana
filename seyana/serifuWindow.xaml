@@ -9,9 +9,14 @@
         AllowsTransparency="True"
         Background="Transparent"
         WindowStyle="None"
-        ResizeMode="NoResize">
+        ResizeMode="NoResize"
+        ShowInTaskbar="False">
     <Grid>
-        <Image Source="fukidashi.png"/>
+        <Image Source="fukidashi.png" RenderTransformOrigin="0.5, 0.5">
+            <Image.RenderTransform>
+                <ScaleTransform x:Name="invert"/>
+            </Image.RenderTransform>
+        </Image>
         <TextBlock x:Name="serifu"
                    Text=""
                    HorizontalAlignment="Left"

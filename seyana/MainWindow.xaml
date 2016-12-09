@@ -13,7 +13,7 @@
 
     <Window.ContextMenu>
         <ContextMenu>
-            <MenuItem Header="summon" Click="Action_Clicked"/>
+            <MenuItem Header="summon" Click="Summon_Clicked"/>
             <MenuItem Header="quit" Click="Quit_Clicked"/>
         </ContextMenu>
     </Window.ContextMenu>
@@ -22,6 +22,10 @@
         <!--
         <TextBlock HorizontalAlignment="Center" VerticalAlignment="Center" Text="Hello World!"/>
         -->
-        <Image Source="seyana.png" Margin="-180, -100"/>
+        <Image Source="seyana.png" Margin="-180, -100" RenderTransformOrigin="0.5, 0.5">
+            <Image.RenderTransform>
+                <ScaleTransform x:Name="invert" ScaleX="1"/>
+            </Image.RenderTransform>
+        </Image>
     </Grid>
 </Window>
