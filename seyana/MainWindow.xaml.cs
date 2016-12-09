@@ -43,6 +43,8 @@ namespace seyana
             ebi = new ebifry();
 
             brain.init(this, sw, ebi);
+            sw.Owner = this;
+            ebi.Owner = this;
 
             x = 100;
             y = 200;
@@ -102,12 +104,11 @@ namespace seyana
             do
             {
                 double ang = Util.rnd.NextDouble() * 2 * Math.PI;
-                double x0 = (x + width / 2) + 200 * Math.Cos(ang) - ebi.w / 2;
-                double y0 = (y + height / 2) + 200 * Math.Sin(ang) - ebi.h / 2;
+                double x0 = (x + width / 2) + 100 * Math.Cos(ang) - ebi.w / 2;
+                double y0 = (y + height / 2) + 100 * Math.Sin(ang) - ebi.h / 2;
                 ebi.x = (int)x0;
                 ebi.y = (int)y0;
-                Canvas.SetLeft(ebi, x0);
-                Canvas.SetTop(ebi, y0);
+                setPosition(ebi, (int)x0, (int)y0);
             } while (!Util.isInScreen(ebi.toRect()));
             ebi.spawn(50);
         }
@@ -143,6 +144,23 @@ namespace seyana
         private void Quit_Clicked(object sender, RoutedEventArgs args)
         {
             Close();
+        }
+
+        public void hideInvoke()
+        {
+            try
+            {
+                Dispatcher.Invoke(() => Hide());
+            }
+            catch (Exception e) { Console.WriteLine(e.StackTrace); }
+        }
+        public void showInvoke()
+        {
+            try
+            {
+                Dispatcher.Invoke(() => Show());
+            }
+            catch (Exception e) { Console.WriteLine(e.StackTrace); }
         }
 
         protected override void OnMouseLeftButtonDown(MouseButtonEventArgs e)

@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows.Threading;
 
 namespace seyana
 {
@@ -63,7 +64,7 @@ namespace seyana
 
             // エビフライを食べた後大人しくしている時間(秒)
             int manpukudo = 0;
-            int ebisize = 60;
+            int ebisize = 10;
 
             thinkTask.getToken().ThrowIfCancellationRequested();
 
@@ -87,6 +88,8 @@ namespace seyana
                 }
 
                 if (manpukudo > 0) manpukudo--;
+
+
                 System.Threading.Thread.Sleep(1000 / FPS);
             }
         }

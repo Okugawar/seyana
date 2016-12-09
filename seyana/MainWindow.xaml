@@ -9,7 +9,8 @@
         AllowsTransparency="True"
         Background="Transparent"
         WindowStyle="None"
-        ResizeMode="NoResize">
+        ResizeMode="NoResize"
+        Topmost="True">
 
     <Window.ContextMenu>
         <ContextMenu>

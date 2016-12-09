@@ -18,13 +18,13 @@ namespace seyana
             public TaskManage(Action act)
             {
                 this.act = act;
-                cts = new CancellationTokenSource();
             }
 
             public void start()
             {
                 cancel();
 
+                cts = new CancellationTokenSource();
                 t = Task.Factory.StartNew(act, cts.Token);
             }
 
